@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Outlines, useGLTF } from '@react-three/drei'
 
 export function Lungs(props) {

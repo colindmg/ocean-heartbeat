@@ -1,4 +1,5 @@
 import { useGLTF, useAnimations } from '@react-three/drei'
+import { useRef } from 'react'
 
 export function Fish(props) {
     const group = useRef()

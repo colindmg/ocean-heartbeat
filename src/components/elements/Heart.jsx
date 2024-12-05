@@ -20,7 +20,7 @@ export function Heart(props) {
                     setHovered(false)
                 }}
             >
-                {hovered && <Outlines thickness={10} color="white" />}
+                {hovered && <Outlines screenspace thickness={1} color="white" />}
             </mesh>
         </group>
     )
