@@ -2,6 +2,7 @@ import { OrbitControls, useVideoTexture } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import Sand from "./elements/Sand";
 import PostProcessing from "./PostProcessing";
+import { Heart } from "./elements/Heart";
 
 function Cookie(props) {
   const texture = useVideoTexture("/videos/caustics.mp4");
@@ -32,6 +33,7 @@ const Experiment = () => {
       <directionalLight castShadow position={[10, 10, 10]} />
 
       <Sand />
+      <Heart scale={0.1} />
 
       <OrbitControls makeDefault />
 
