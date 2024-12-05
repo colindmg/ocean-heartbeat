@@ -10,11 +10,11 @@ const Experiment = () => {
   return (
     <>
       <ambientLight />
-      <directionalLight position={[10, 10, 10]} />
+      <directionalLight position={[10, 10, 10]} castShadow />
 
       <Sand />
 
-      <OrbitControls />
+      <OrbitControls makeDefault />
 
       {/* <PostProcessing /> */}
     </>
