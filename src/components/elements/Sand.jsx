@@ -1,13 +1,26 @@
+import { useTexture } from "@react-three/drei";
 import * as THREE from "three";
-// import { CustomShaderMaterial } from "three-custom-shader-material/vanilla";
-
-// const sandMaterial = new CustomShaderMaterial({});
 
 const Sand = () => {
+  const normalMapTexture = useTexture(
+    "/textures/sandNormalMap.png",
+    (texture) => {
+      texture.wrapS = THREE.RepeatWrapping;
+      texture.wrapT = THREE.RepeatWrapping;
+      texture.repeat.set(5, 5);
+    }
+  );
+
   return (
-    <mesh rotation-x={Math.PI / 2} position-y={-3} scale={100}>
-      <planeGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="yellow" side={THREE.DoubleSide} />
+    <mesh castShadow receiveShadow rotation-x={-Math.PI / 2} scale={100}>
+      <planeGeometry computeTangents={() => {}} args={[1, 1, 64, 64]} />
+      <meshStandardMaterial
+        color={0xf0e68c}
+        displacementMap={normalMapTexture}
+        displacementScale={0.01}
+        displacementBias={0}
+        normalMap={normalMapTexture}
+      />
     </mesh>
   );
 };
