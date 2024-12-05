@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* gianiteh.otf */
+@font-face {
+  font-family: "Gianiteh";
+  src: url("./fonts/gianiteh.otf") format("opentype");
+}

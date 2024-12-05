@@ -3,6 +3,7 @@ import { useThree } from "@react-three/fiber";
 import Caustics from "./Caustics";
 import { Heart } from "./elements/Heart";
 import Sand from "./elements/Sand";
+import PostProcessing from "./PostProcessing";
 
 const Experience = () => {
   const { camera } = useThree();
@@ -20,7 +21,7 @@ const Experience = () => {
       <OrbitControls makeDefault />
 
       {/* POSTPROCESSING */}
-      {/* <PostProcessing /> */}
+      <PostProcessing />
 
       {/* ENVIRONMENT */}
       <color attach="background" args={["#1a1a5e"]} />

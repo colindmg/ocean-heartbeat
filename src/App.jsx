@@ -1,12 +1,13 @@
 import { Canvas } from "@react-three/fiber";
 import Experiment from "./components/Experience";
+import LoaderHome from "./components/LoaderHome";
 
 function App() {
   return (
     <>
+      {/* R3F */}
       <Canvas
         shadows
-        
         style={{
           width: "100vw",
           height: "100vh",
@@ -18,6 +19,9 @@ function App() {
       >
         <Experiment />
       </Canvas>
+
+      {/* LOADER HOME */}
+      <LoaderHome />
     </>
   );
 }
