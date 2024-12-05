@@ -1,11 +1,12 @@
 import { Canvas } from "@react-three/fiber";
-import Experiment from "./components/Experiment";
+import Experiment from "./components/Experience";
 
 function App() {
   return (
     <>
       <Canvas
         shadows
+        
         style={{
           width: "100vw",
           height: "100vh",

@@ -8,7 +8,7 @@ import {
 const PostProcessing = () => {
   return (
     <>
-      <EffectComposer>
+      <EffectComposer multisampling={1}>
         <WaterEffect factor={0.75} />
         <TiltShift2 samples={6} blur={0.5} />
         <ToneMapping />

@@ -13,7 +13,7 @@ const Sand = () => {
 
   return (
     <mesh castShadow receiveShadow rotation-x={-Math.PI / 2} scale={100}>
-      <planeGeometry computeTangents={() => {}} args={[1, 1, 32, 32]} />
+      <planeGeometry computeTangents={() => { }} args={[1, 1, 32, 32]} />
       <meshLambertMaterial
         color={0xf0e68c}
         displacementMap={normalMapTexture}
