@@ -1,6 +1,5 @@
-import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { EffectComposer, WaterEffect } from "@react-three/postprocessing";
+import Experiment from "./components/Experiment";
 
 function App() {
   return (
@@ -15,18 +14,7 @@ function App() {
           zIndex: -1,
         }}
       >
-        <ambientLight />
-        <directionalLight position={[10, 10, 10]} />
-        <mesh>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="hotpink" />
-        </mesh>
-
-        <OrbitControls />
-
-        <EffectComposer>
-          <WaterEffect factor={0.75} />
-        </EffectComposer>
+        <Experiment />
       </Canvas>
     </>
   );

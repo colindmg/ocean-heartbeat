@@ -15,7 +15,8 @@
     "@react-three/postprocessing": "^2.16.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "three": "^0.169.0"
+    "three": "^0.170.0",
+    "three-custom-shader-material": "^6.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
