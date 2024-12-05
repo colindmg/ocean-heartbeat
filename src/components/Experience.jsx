@@ -1,10 +1,8 @@
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Sparkles } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
-import Sand from "./elements/Sand";
-import PostProcessing from "./PostProcessing";
-import { Heart } from "./elements/Heart";
-import { Perf } from "r3f-perf";
 import Caustics from "./Caustics";
+import { Heart } from "./elements/Heart";
+import Sand from "./elements/Sand";
 
 const Experience = () => {
   const { camera } = useThree();
@@ -15,12 +13,22 @@ const Experience = () => {
 
   return (
     <>
-      <Perf position="top-left" />
+      {/* PERFS */}
+      {/* <Perf position="top-left" /> */}
 
+      {/* CONTROLS */}
+      <OrbitControls makeDefault />
+
+      {/* POSTPROCESSING */}
+      {/* <PostProcessing /> */}
+
+      {/* ENVIRONMENT */}
       <color attach="background" args={["#1a1a5e"]} />
-
       <fog attach="fog" args={["#1a1a5e", -3, 20]} />
 
+      {/* LIGHTS */}
+      <ambientLight intensity={1} />
+      <directionalLight castShadow position={[10, 10, 10]} />
       <Caustics
         distance={100}
         intensity={15}
@@ -29,15 +37,10 @@ const Experience = () => {
         position={[2, 10, 0]}
       />
 
-      <ambientLight intensity={1} />
-      <directionalLight castShadow position={[10, 10, 10]} />
-
+      {/* SCENE */}
       <Sand />
-      <Heart scale={0.1} />
-
-      <OrbitControls makeDefault />
-
-      <PostProcessing />
+      <Sparkles scale={30} size={2} count={200} />
+      <Heart scale={0.05} position-y={1} position-z={2} />
     </>
   );
 };

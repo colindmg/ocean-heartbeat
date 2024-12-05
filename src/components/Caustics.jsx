@@ -1,8 +1,8 @@
-import { useVideoTexture } from '@react-three/drei';
+import { useVideoTexture } from "@react-three/drei";
 
 const Caustics = (props) => {
-    const texture = useVideoTexture("/videos/caustics.mp4");
-    return <spotLight decay={0} map={texture} castShadow {...props} />;
-}
+  const texture = useVideoTexture("/videos/caustics.mp4");
+  return <spotLight decay={0} map={texture} {...props} />;
+};
 
-export default Caustics
+export default Caustics;

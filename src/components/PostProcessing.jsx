@@ -10,7 +10,7 @@ const PostProcessing = () => {
     <>
       <EffectComposer multisampling={1}>
         <WaterEffect factor={0.75} />
-        <TiltShift2 samples={6} blur={0.5} />
+        <TiltShift2 samples={3} blur={0.25} />
         <ToneMapping />
       </EffectComposer>
     </>
