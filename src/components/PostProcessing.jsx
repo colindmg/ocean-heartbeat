@@ -1,10 +1,17 @@
-import { EffectComposer, WaterEffect } from "@react-three/postprocessing";
+import {
+  EffectComposer,
+  TiltShift2,
+  ToneMapping,
+  WaterEffect,
+} from "@react-three/postprocessing";
 
 const PostProcessing = () => {
   return (
     <>
       <EffectComposer>
         <WaterEffect factor={0.75} />
+        <TiltShift2 samples={6} blur={0.5} />
+        <ToneMapping />
       </EffectComposer>
     </>
   );
