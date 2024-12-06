@@ -15,10 +15,10 @@ const Experience = () => {
 
   const { camera } = useThree();
   camera.position.set(0, 4, 5);
-  camera.lookAt(-2, 2, 1);
   const mouse = useMouse();
 
   useFrame(() => {
+    camera.lookAt(0, 2, 1);
     camera.position.x = lerp(camera.position.x, mouse.x.get(), 0.025);
     camera.position.y = lerp(camera.position.y, mouse.y.get() + 4, 0.025);
   });
@@ -48,7 +48,7 @@ const Experience = () => {
 
       {/* SCENE */}
       <Sand />
-      <Heart rotation-y={(Math.PI * 0.5) * 3} position={[-2, 1, 1]} scale={0.05} />
+      <Heart rotation-y={(Math.PI * 0.5) * 3} position={[0, 1, 1]} scale={0.05} />
       {/*<Brain scale={0.015} position={[-2, 1, 1]}/>*/}
       <OceanEnvironment position-z={2} />
       <Sparkles scale={30} size={2} count={200} />
