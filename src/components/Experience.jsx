@@ -1,5 +1,8 @@
 import { OrbitControls, Sparkles } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
+import { Perf } from "r3f-perf";
+import useMouse from "../hooks/useMouse";
+import { lerp } from "../utils";
 import Caustics from "./Caustics";
 import { Heart } from "./elements/Heart";
 import Sand from "./elements/Sand";
@@ -8,14 +11,21 @@ import PostProcessing from "./PostProcessing";
 const Experience = () => {
   const { camera } = useThree();
 
+  const mouse = useMouse();
+
   camera.position.y = 3;
   camera.position.z = 8;
   camera.lookAt(0, 0, 5);
 
+  useFrame(() => {
+    camera.position.x = lerp(camera.position.x, mouse.x.get(), 0.025);
+    camera.position.y = lerp(camera.position.y, mouse.y.get() + 5, 0.025);
+  });
+
   return (
     <>
       {/* PERFS */}
-      {/* <Perf position="top-left" /> */}
+      <Perf position="top-left" />
 
       {/* CONTROLS */}
       <OrbitControls makeDefault />
