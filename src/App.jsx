@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import Experiment from "./components/Experience";
 import LoaderHome from "./components/LoaderHome";
+import Overlay from "./components/overlay/Overlay";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
 
       {/* LOADER HOME */}
       <LoaderHome />
+
+      {/* OVERLAY */}
+      <Overlay />
     </>
   );
 }
