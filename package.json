@@ -14,10 +14,12 @@
     "@react-three/fiber": "^8.17.10",
     "@react-three/postprocessing": "^2.16.3",
     "leva": "^0.9.35",
+    "motion": "^11.13.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "three": "^0.170.0",
-    "three-custom-shader-material": "^6.2.0"
+    "three-custom-shader-material": "^6.2.0",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

@@ -1,26 +1,43 @@
-import {useFrame, useThree} from "@react-three/fiber";
-import {Perf} from "r3f-perf";
-import {OceanEnvironment} from "./elements/environment/OceanEnvironment";
+
+import { useFrame, useThree } from "@react-three/fiber";
+import { Perf } from "r3f-perf";
+import { OceanEnvironment } from "./elements/environment/OceanEnvironment";
 import PostProcessing from "./PostProcessing";
 import Sand from "./elements/Sand";
 import Caustics from "./Caustics";
-import {Heart} from "./elements/Heart.jsx";
-import {Brain} from "./elements/Brain.jsx";
+import { Heart } from "./elements/Heart.jsx";
+import { Brain } from "./elements/Brain.jsx";
+import { Sparkles } from "@react-three/drei";
+import useMouse from "../hooks/useMouse";
+import { lerp } from "../utils";
 
 const Experience = () => {
 
-  const {camera} = useThree();
+  const { camera } = useThree();
   camera.position.set(0, 4, 5);
   camera.lookAt(-2, 2, 1);
+  const mouse = useMouse();
+
+  useFrame(() => {
+    camera.position.x = lerp(camera.position.x, mouse.x.get(), 0.025);
+    camera.position.y = lerp(camera.position.y, mouse.y.get() + 4, 0.025);
+  });
 
   return (
     <>
-      <Perf position="top-left"/>
+      {/* PERFS */}
+      <Perf position="top-left" />
 
-      <color attach="background" args={["#1a1a5e"]}/>
+      {/* POSTPROCESSING */}
+      <PostProcessing />
 
-      <fog attach="fog" args={["#1a1a5e", -3, 20]}/>
+      {/* ENVIRONMENT */}
+      <color attach="background" args={["#1a1a5e"]} />
+      <fog attach="fog" args={["#1a1a5e", -3, 20]} />
 
+      {/* LIGHTS */}
+      <ambientLight intensity={1} />
+      <directionalLight castShadow position={[10, 10, 10]} />
       <Caustics
         distance={100}
         intensity={15}
@@ -29,15 +46,12 @@ const Experience = () => {
         position={[2, 10, 0]}
       />
 
-      <ambientLight intensity={1}/>
-      <directionalLight castShadow position={[10, 10, 10]}/>
-
-      <Sand/>
-      <Heart rotation-y={(Math.PI * 0.5) * 3} position={[-2, 1, 1]} scale={0.05}/>
+      {/* SCENE */}
+      <Sand />
+      <Heart rotation-y={(Math.PI * 0.5) * 3} position={[-2, 1, 1]} scale={0.05} />
       {/*<Brain scale={0.015} position={[-2, 1, 1]}/>*/}
-      <OceanEnvironment position-z={2}/>
-
-      <PostProcessing/>
+      <OceanEnvironment position-z={2} />
+      <Sparkles scale={30} size={2} count={200} />
     </>
   );
 };
