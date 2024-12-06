@@ -1,15 +1,13 @@
-
-import { useFrame, useThree } from "@react-three/fiber";
-import { Perf } from "r3f-perf";
-import { OceanEnvironment } from "./elements/environment/OceanEnvironment";
+import {useFrame, useThree} from "@react-three/fiber";
+import {Perf} from "r3f-perf";
+import {OceanEnvironment} from "./elements/environment/OceanEnvironment";
 import PostProcessing from "./PostProcessing";
 import Sand from "./elements/Sand";
 import Caustics from "./Caustics";
-import { Heart } from "./elements/Heart.jsx";
-import { Brain } from "./elements/Brain.jsx";
-import { Sparkles } from "@react-three/drei";
+import {Sparkles} from "@react-three/drei";
 import useMouse from "../hooks/useMouse";
-import { lerp } from "../utils";
+import {lerp} from "../utils";
+import {AnglerFish} from "./elements/AnglerFish.jsx";
 
 const Experience = () => {
 
@@ -48,8 +46,7 @@ const Experience = () => {
 
       {/* SCENE */}
       <Sand />
-      <Heart rotation-y={(Math.PI * 0.5) * 3} position={[0, 1, 1]} scale={0.05} />
-      {/*<Brain scale={0.015} position={[-2, 1, 1]}/>*/}
+      <AnglerFish position={[-2, 4, -8]} />
       <OceanEnvironment position-z={2} />
       <Sparkles scale={30} size={2} count={200} />
     </>

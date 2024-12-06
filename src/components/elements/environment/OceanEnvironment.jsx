@@ -1,10 +1,10 @@
-import { RocksAlgae } from "./rocks/RocksAlgae.jsx";
-import { Rocks } from "./rocks/Rocks.jsx";
-import { Seaweed } from "./Seaweed.jsx";
-import { SeaAnemone } from "./SeaAnemone.jsx";
-import { Star } from "./Star.jsx";
-import { BigRocks } from "./rocks/BigRocks.jsx";
-import { Shell } from "./Shell.jsx";
+import {RocksAlgae} from "./rocks/RocksAlgae.jsx";
+import {Rocks} from "./rocks/Rocks.jsx";
+import {Seaweed} from "./Seaweed.jsx";
+import {SeaAnemone} from "./SeaAnemone.jsx";
+import {Star} from "./Star.jsx";
+import {BigRocks} from "./rocks/BigRocks.jsx";
+import {Shell} from "./Shell.jsx";
 
 export function OceanEnvironment(props) {
   return (
