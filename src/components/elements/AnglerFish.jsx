@@ -4,7 +4,7 @@ import {useRef} from "react";
 
 export function AnglerFish(props) {
   const fish = useRef();
-  const limits = {x: 25, y: 6.5, z: 8};
+  const limits = {x: 45, y: 6.5, z: 8};
 
   useFrame((state, delta) => {
     const {x} = fish.current.position;
