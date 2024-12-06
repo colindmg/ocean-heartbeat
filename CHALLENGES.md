@@ -63,7 +63,7 @@ https://www.nuitdelinfo.com/inscription/defis/434
 ## Restitution
 
 - Application déployée et accessible par une URL
-- Lien vers le projert GitHub (en public)
+- Lien vers le projet GitHub (en public)
 
 Livraison à l'adresse mail : butelledylan@gmail.com
 
