@@ -19,16 +19,21 @@ const LoaderHome = () => {
     <AnimatePresence>
       {show && (
         <motion.div
+          key={"loaderOverlay"}
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.75, ease: "easeIn" } }}
           className="fixed z-50 top-0 left-0 p-14 text-white text-center size-full bg-[#1a1a5e] flex flex-col items-center justify-center gap-5"
         >
-          <motion.h1 className="font-gianiteh text-4xl font-bold ">
+          <motion.h1
+            key={"loaderTitle"}
+            className="font-gianiteh text-4xl font-bold "
+          >
             OCEAN HEARTBEAT
           </motion.h1>
 
           {/* START BUTTON */}
           <motion.button
+            key={"loaderButton"}
             initial={{ opacity: 0, filter: "blur(10px)" }}
             animate={{
               opacity: progress === 100 ? 1 : 0,
@@ -46,6 +51,7 @@ const LoaderHome = () => {
 
           {/* LOADING BAR */}
           <motion.div
+            key={"loaderBar"}
             className="absolute bottom-0 w-full h-[3px] "
             animate={{
               opacity: progress === 100 ? 0 : 1,
@@ -54,6 +60,7 @@ const LoaderHome = () => {
             }}
           >
             <motion.div
+              key={"loaderBarFill"}
               className="h-full w-0 bg-white"
               animate={{ width: `${progress}%` }}
             ></motion.div>

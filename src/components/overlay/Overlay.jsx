@@ -1,5 +1,6 @@
 import { AnimatePresence } from "motion/react";
 import useExperience from "../../stores/useExperience";
+import CreditsOverlay from "./CreditsOverlay";
 import ObjectDetails from "./ObjectDetails";
 import ObjectSwitcher from "./ObjectSwitcher";
 import RetroModeToggle from "./RetroModeToggle";
@@ -14,6 +15,7 @@ const Overlay = () => {
       <div className="absolute bottom-8 left-8 pointer-events-auto flex items-center gap-4">
         <SoundToggle />
         <RetroModeToggle />
+        <CreditsOverlay />
       </div>
 
       {/* SELECTED OBJECT */}
