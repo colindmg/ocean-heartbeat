@@ -11,9 +11,10 @@ export function Heart(props) {
         receiveShadow
         geometry={nodes.Heart.geometry}
         material={materials.Mat}
-        onPointerEnter={() => {
+        onPointerEnter={(event) => {
           document.body.style.cursor = 'pointer'
           setHovered(true)
+          event.stopPropagation()
         }}
         onPointerLeave={() => {
           document.body.style.cursor = 'auto'

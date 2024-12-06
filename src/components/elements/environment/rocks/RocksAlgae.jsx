@@ -2,7 +2,6 @@ import {useGLTF} from '@react-three/drei'
 
 export function RocksAlgae(props) {
   const {nodes, materials} = useGLTF('./models/environment/rocks_algae.glb')
-  console.log(materials)
   return (
     <group scale={3} position-y={0.8} {...props} dispose={null}>
       <mesh

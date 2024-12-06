@@ -1,25 +1,25 @@
-import { OrbitControls } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
-import Sand from "./elements/Sand";
+import {useFrame, useThree} from "@react-three/fiber";
+import {Perf} from "r3f-perf";
+import {OceanEnvironment} from "./elements/environment/OceanEnvironment";
 import PostProcessing from "./PostProcessing";
-import { Heart } from "./elements/Heart";
-import { Perf } from "r3f-perf";
+import Sand from "./elements/Sand";
 import Caustics from "./Caustics";
+import {Heart} from "./elements/Heart.jsx";
+import {Brain} from "./elements/Brain.jsx";
 
 const Experience = () => {
-  const { camera } = useThree();
 
-  camera.position.y = 3;
-  camera.position.z = 8;
-  camera.lookAt(0, 0, 5);
+  const {camera} = useThree();
+  camera.position.set(0, 4, 5);
+  camera.lookAt(-2, 2, 1);
 
   return (
     <>
-      <Perf position="top-left" />
+      <Perf position="top-left"/>
 
-      <color attach="background" args={["#1a1a5e"]} />
+      <color attach="background" args={["#1a1a5e"]}/>
 
-      <fog attach="fog" args={["#1a1a5e", -3, 20]} />
+      <fog attach="fog" args={["#1a1a5e", -3, 20]}/>
 
       <Caustics
         distance={100}
@@ -29,15 +29,15 @@ const Experience = () => {
         position={[2, 10, 0]}
       />
 
-      <ambientLight intensity={1} />
-      <directionalLight castShadow position={[10, 10, 10]} />
+      <ambientLight intensity={1}/>
+      <directionalLight castShadow position={[10, 10, 10]}/>
 
-      <Sand />
-      <Heart scale={0.1} />
+      <Sand/>
+      <Heart rotation-y={(Math.PI * 0.5) * 3} position={[-2, 1, 1]} scale={0.05}/>
+      {/*<Brain scale={0.015} position={[-2, 1, 1]}/>*/}
+      <OceanEnvironment position-z={2}/>
 
-      <OrbitControls makeDefault />
-
-      <PostProcessing />
+      <PostProcessing/>
     </>
   );
 };

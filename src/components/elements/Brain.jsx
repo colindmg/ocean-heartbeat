@@ -1,30 +1,30 @@
-import {useState} from 'react'
 import {Outlines, useGLTF} from '@react-three/drei'
+import {useState} from "react";
 
-export function Lungs(props) {
-  const {nodes, materials} = useGLTF('./models/lungs.glb')
+export function Brain(props) {
+  const { nodes, materials } = useGLTF('./models/brain.glb')
   const [hovered, setHovered] = useState(false)
-
   return (
     <group {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Kidney.geometry}
-        material={materials.Mat}
-        onPointerEnter={() => {
+        geometry={nodes.BRAIN.geometry}
+        material={materials['Brain pink']}
+        onPointerEnter={(event) => {
           document.body.style.cursor = 'pointer'
           setHovered(true)
+          event.stopPropagation()
         }}
         onPointerLeave={() => {
           document.body.style.cursor = 'auto'
           setHovered(false)
         }}
       >
-        {hovered && <Outlines thickness={10} color="white"/>}
+        {hovered && <Outlines screenspace thickness={1} color="white"/>}
       </mesh>
     </group>
   )
 }
 
-useGLTF.preload('./models/lungs.glb')
+useGLTF.preload('./models/brain.glb')
