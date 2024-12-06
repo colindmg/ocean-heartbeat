@@ -26,6 +26,8 @@ const LoaderHome = () => {
           <motion.h1 className="font-gianiteh text-4xl font-bold ">
             OCEAN HEARTBEAT
           </motion.h1>
+
+          {/* START BUTTON */}
           <motion.button
             initial={{ opacity: 0, filter: "blur(10px)" }}
             animate={{
@@ -36,7 +38,7 @@ const LoaderHome = () => {
             whileHover={{ scale: 1.025, transition: { duration: 0.2 } }}
             disabled={progress < 100}
             style={{ cursor: progress < 100 ? "default" : "pointer" }}
-            className="px-4 py-2 border-2 border-white uppercase font-semibold mt-10 hover:scale-105"
+            className="px-4 py-2 border-2 border-white rounded-sm uppercase font-semibold mt-10 hover:scale-105"
             onClick={handleExperienceStart}
           >
             Démarrer l&apos;expérience

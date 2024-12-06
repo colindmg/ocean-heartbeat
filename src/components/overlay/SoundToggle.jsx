@@ -15,10 +15,7 @@ const SoundToggle = () => {
   };
 
   return (
-    <button
-      className="text-white absolute bottom-8 left-8 pointer-events-auto"
-      onClick={handleSoundToggle}
-    >
+    <button className="text-white hover:opacity-50" onClick={handleSoundToggle}>
       {/* SOUND {isSoundMuted ? "OFF" : "ON"} */}
       {/* SOUND ICON */}
       <AudioAnimatedIcon isPlaying={!isSoundMuted} />

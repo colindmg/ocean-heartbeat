@@ -25,7 +25,9 @@ const animateVolume = (targetVolume, duration) => {
 
 export default create((set) => ({
   isSoundMuted: false,
+  isRetroModeEnabled: false,
 
+  // AUDIO HANDLING
   start: () => {
     audio.play();
     animateVolume(0.2, 2000);
@@ -42,6 +44,19 @@ export default create((set) => ({
     set(() => {
       animateVolume(0.2, 2000);
       return { isSoundMuted: false };
+    });
+  },
+
+  // RETRO MODE HANDLING
+  enableRetroMode: () => {
+    set(() => {
+      return { isRetroModeEnabled: true };
+    });
+  },
+
+  disableRetroMode: () => {
+    set(() => {
+      return { isRetroModeEnabled: false };
     });
   },
 }));
