@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { heart } from "../content";
 
 // Audio global
 const audio = new Audio("/audios/oceanatmosphere.mp3");
@@ -26,6 +27,7 @@ const animateVolume = (targetVolume, duration) => {
 export default create((set) => ({
   isSoundMuted: false,
   isRetroModeEnabled: false,
+  selectedObject: heart,
 
   // AUDIO HANDLING
   start: () => {
@@ -57,6 +59,19 @@ export default create((set) => ({
   disableRetroMode: () => {
     set(() => {
       return { isRetroModeEnabled: false };
+    });
+  },
+
+  // SELECTED OBJECT HANDLING
+  selectObject: (objectName) => {
+    set(() => {
+      return { selectedObject: objectName };
+    });
+  },
+
+  unselectObject: () => {
+    set(() => {
+      return { selectedObject: null };
     });
   },
 }));

@@ -1,3 +1,5 @@
+import { AnimatePresence } from "motion/react";
+import ObjectSwitcher from "./ObjectSwitcher";
 import RetroModeToggle from "./RetroModeToggle";
 import SoundToggle from "./SoundToggle";
 
@@ -9,6 +11,11 @@ const Overlay = () => {
         <SoundToggle />
         <RetroModeToggle />
       </div>
+
+      {/* SELECTED OBJECT */}
+      <AnimatePresence mode="sync">
+        <ObjectSwitcher />
+      </AnimatePresence>
     </div>
   );
 };
