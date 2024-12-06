@@ -5,25 +5,21 @@ import useExperience from "../stores/useExperience";
 
 const LoaderHome = () => {
   const { progress } = useProgress();
-  const [isShown, setIsShown] = useState(true);
-
-  // ZUSTAND
-  const loaded = useExperience((state) => state.loaded);
+  const [show, setShow] = useState(true);
   const start = useExperience((state) => state.start);
 
-  if (progress === 100) {
-    loaded();
-  }
-
   const handleExperienceStart = () => {
-    setIsShown(false);
-    start();
+    setShow(false);
+    setTimeout(() => {
+      start();
+    }, 100);
   };
 
   return (
     <AnimatePresence>
-      {isShown && (
+      {show && (
         <motion.div
+          initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.75, ease: "easeIn" } }}
           className="fixed z-50 top-0 left-0 p-14 text-white text-center size-full bg-[#1a1a5e] flex flex-col items-center justify-center gap-5"
         >

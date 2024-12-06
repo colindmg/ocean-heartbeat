@@ -26,35 +26,21 @@ const animateVolume = (targetVolume, duration) => {
 export default create((set) => ({
   isSoundMuted: false,
 
-  // PHASES OF THE EXPERIENCE
-  phase: "loading",
-
-  // FUNCTIONS TO CHANGE BETWEEN PHASES
-  loaded: () => {
-    set({ phase: "loaded" });
-  },
-
   start: () => {
-    set((state) => {
-      if (state.phase === "loaded") {
-        audio.play();
-        animateVolume(0.2, 2000); // Augmente le volume à 0.2 en 2 secondes
-        return { phase: "started" };
-      }
-      return {};
-    });
+    audio.play();
+    animateVolume(0.2, 2000);
   },
 
   muteSound: () => {
     set(() => {
-      animateVolume(0.0, 2000); // Diminue le volume à 0 en 2 secondes
+      animateVolume(0.0, 2000);
       return { isSoundMuted: true };
     });
   },
 
   unmuteSound: () => {
     set(() => {
-      animateVolume(0.2, 2000); // Augmente le volume à 0.2 en 2 secondes
+      animateVolume(0.2, 2000);
       return { isSoundMuted: false };
     });
   },
