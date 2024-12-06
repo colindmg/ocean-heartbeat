@@ -18,4 +18,14 @@ const brain = {
     "Apprenez comment les écosystèmes océaniques interconnectés fonctionnent en harmonie, rappelant les neurones du cerveau humain, pour maintenir la santé de notre planète.",
 };
 
-export { brain, heart };
+const kidneys = {
+  name: "Les reins",
+  title1: "Le système de filtration des océans",
+  firstDescription:
+    "Les océans, comme des reins, filtrent les impuretés grâce à leurs écosystèmes, absorbant le CO2 et purifiant l’eau pour maintenir un équilibre écologique.",
+  title2: "La gestion des ressources vitales",
+  secondDescription:
+    "Découvrez comment les océans, tout comme les reins, régulent les niveaux de sel et autres éléments essentiels pour préserver un environnement sain et durable.",
+};
+
+export { brain, heart, kidneys };
