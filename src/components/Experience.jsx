@@ -47,7 +47,7 @@ const Experience = () => {
       {/* SCENE */}
       <Sand />
       <Heart rotation-y={Math.PI * 0.5 * 3} position={[0, 1, 1]} scale={0.05} />
-      <Brain scale={0.015} position={[0, 1, 1]} />
+      <Brain scale={0.014} position={[0, 1, 1]} />
       <OceanEnvironment position-z={2} />
       <Sparkles scale={30} size={2} count={200} />
     </>

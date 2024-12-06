@@ -14,6 +14,9 @@ export function Heart(props) {
   const meshRef = useRef();
 
   const selectedObject = useExperience((state) => state.selectedObject);
+  const showDetails = useExperience((state) => state.showDetails);
+  const hideDetails = useExperience((state) => state.hideDetails);
+  const areDetailsVisible = useExperience((state) => state.areDetailsVisible);
 
   useGSAP(() => {
     if (selectedObject === heart) {
@@ -47,6 +50,13 @@ export function Heart(props) {
         receiveShadow
         geometry={nodes.Heart.geometry}
         material={materials.Mat}
+        onClick={() => {
+          if (areDetailsVisible) {
+            hideDetails();
+          } else {
+            showDetails();
+          }
+        }}
         onPointerEnter={(event) => {
           document.body.style.cursor = "pointer";
           setHovered(true);

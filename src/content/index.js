@@ -1,17 +1,21 @@
 const heart = {
   name: "Le coeur",
+  title1: "Le moteur vital des océans",
   firstDescription:
-    "Le coeur est un organe musculaire creux qui assure la circulation du sang dans l'organisme.",
+    "Explorez comment les courants marins, semblables à un système circulatoire, régulent le climat et distribuent l'énergie vitale à travers la planète.",
+  title2: "L'équilibre thermique",
   secondDescription:
-    "Il est situé dans la cage thoracique, entre les deux poumons, à hauteur du médiastin.",
+    "Découvrez la pompe thermohaline, un processus essentiel qui maintient la stabilité thermique des océans, tout comme le cœur stabilise le corps humain.",
 };
 
 const brain = {
   name: "Le cerveau",
+  title1: "Le centre de commandement des océans",
   firstDescription:
-    "Le cerveau est l'organe le plus important du système nerveux central.",
+    "L'océan agit comme un cerveau, stockant des données climatiques cruciales et influençant les cycles planétaires, tout en soutenant une biodiversité complexe.",
+  title2: "Des connexions essentielles",
   secondDescription:
-    "Il est situé dans la boîte crânienne et pèse environ 1,4 kg chez l'adulte.",
+    "Apprenez comment les écosystèmes océaniques interconnectés fonctionnent en harmonie, rappelant les neurones du cerveau humain, pour maintenir la santé de notre planète.",
 };
 
 export { brain, heart };

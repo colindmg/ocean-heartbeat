@@ -14,6 +14,9 @@ export function Brain(props) {
   const meshRef = useRef();
 
   const selectedObject = useExperience((state) => state.selectedObject);
+  const showDetails = useExperience((state) => state.showDetails);
+  const hideDetails = useExperience((state) => state.hideDetails);
+  const areDetailsVisible = useExperience((state) => state.areDetailsVisible);
 
   useGSAP(() => {
     if (selectedObject === brain) {
@@ -43,10 +46,18 @@ export function Brain(props) {
     <group {...props} dispose={null}>
       <mesh
         ref={meshRef}
+        scale={0}
         castShadow
         receiveShadow
         geometry={nodes.BRAIN.geometry}
         material={materials["Brain pink"]}
+        onClick={() => {
+          if (areDetailsVisible) {
+            hideDetails();
+          } else {
+            showDetails();
+          }
+        }}
         onPointerEnter={(event) => {
           document.body.style.cursor = "pointer";
           setHovered(true);
@@ -57,7 +68,7 @@ export function Brain(props) {
           setHovered(false);
         }}
       >
-        {hovered && <Outlines screenspace thickness={1} color="white" />}
+        {hovered && <Outlines screenspace thickness={2} color="white" />}
       </mesh>
     </group>
   );

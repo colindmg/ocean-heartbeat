@@ -28,6 +28,7 @@ export default create((set) => ({
   isSoundMuted: false,
   isRetroModeEnabled: false,
   selectedObject: heart,
+  areDetailsVisible: false,
 
   // AUDIO HANDLING
   start: () => {
@@ -72,6 +73,19 @@ export default create((set) => ({
   unselectObject: () => {
     set(() => {
       return { selectedObject: null };
+    });
+  },
+
+  // DETAILS HANDLING
+  showDetails: () => {
+    set(() => {
+      return { areDetailsVisible: true };
+    });
+  },
+
+  hideDetails: () => {
+    set(() => {
+      return { areDetailsVisible: false };
     });
   },
 }));
