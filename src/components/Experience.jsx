@@ -1,15 +1,16 @@
-import {useFrame, useThree} from "@react-three/fiber";
-import {Perf} from "r3f-perf";
-import {OceanEnvironment} from "./elements/environment/OceanEnvironment";
-import PostProcessing from "./PostProcessing";
-import Sand from "./elements/Sand";
-import Caustics from "./Caustics";
-import {Sparkles} from "@react-three/drei";
+import { Sparkles } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import { Perf } from "r3f-perf";
 import useMouse from "../hooks/useMouse";
-import {lerp} from "../utils";
+import { lerp } from "../utils";
+import Caustics from "./Caustics";
+import { AnglerFish } from "./elements/AnglerFish.jsx";
 import { Brain } from "./elements/Brain.jsx";
+import { OceanEnvironment } from "./elements/environment/OceanEnvironment";
 import { Heart } from "./elements/Heart.jsx";
-import {AnglerFish} from "./elements/AnglerFish.jsx";
+import { Kidneys } from "./elements/Kidneys.jsx";
+import Sand from "./elements/Sand";
+import PostProcessing from "./PostProcessing";
 
 const Experience = () => {
   const { camera } = useThree();
@@ -47,8 +48,9 @@ const Experience = () => {
 
       {/* SCENE */}
       <Sand />
-      <AnglerFish position={[-2, 4, -8]} />
+      <AnglerFish position={[-2, 4, -8]} scale={0.8} />
       <Heart rotation-y={Math.PI * 0.5 * 3} position={[0, 1, 1]} scale={0.05} />
+      <Kidneys position={[0, 1.2, 1]} scale={0.05} />
       <Brain scale={0.014} position={[0, 1, 1]} />
       <OceanEnvironment position-z={2} />
       <Sparkles scale={30} size={2} count={200} />

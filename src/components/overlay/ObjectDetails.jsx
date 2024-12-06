@@ -9,7 +9,7 @@ const ObjectDetails = () => {
     <>
       <motion.div
         key={selectedObject.title1}
-        className="flex flex-col gap-2 absolute bg-white/30 backdrop-blur-md p-5 rounded-md top-[15%] left-[15%] w-[350px] max-w-90vw text-white"
+        className="flex flex-col gap-2 absolute bg-white/30 backdrop-blur-md p-5 rounded-md top-[15%] left-[15%] w-[350px] max-w-90vw text-white max-md:left-[10%] max-md:w-[80%] max-md:top-[10%]"
         initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
         animate={{
           opacity: 1,
@@ -25,7 +25,7 @@ const ObjectDetails = () => {
 
       <motion.div
         key={selectedObject.title2}
-        className="flex flex-col gap-2 absolute bg-white/30 backdrop-blur-md p-5 rounded-md top-[60%] right-[10%] w-[350px] max-w-90vw text-white"
+        className="flex flex-col gap-2 absolute bg-white/30 backdrop-blur-md p-5 rounded-md top-[55%] right-[10%] w-[350px] max-w-90vw text-white max-md:hidden"
         initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
         animate={{
           opacity: 1,

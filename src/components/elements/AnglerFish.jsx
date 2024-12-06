@@ -1,13 +1,13 @@
-import {useGLTF} from '@react-three/drei'
-import {useFrame} from "@react-three/fiber";
-import {useRef} from "react";
+import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
 export function AnglerFish(props) {
   const fish = useRef();
-  const limits = {x: 45, y: 6.5, z: 8};
+  const limits = { x: 45, y: 6.5, z: 8 };
 
   useFrame((state, delta) => {
-    const {x} = fish.current.position;
+    const { x } = fish.current.position;
     const halfX = limits.x / 2;
 
     // Check boundaries and reposition fish if it reaches the edge
@@ -25,33 +25,28 @@ export function AnglerFish(props) {
     fish.current.position.z -= Math.cos(state.clock.getElapsedTime()) * delta;
   });
 
-
-  const {nodes, materials} = useGLTF('./models/angler_fish.glb')
+  const { nodes, materials } = useGLTF("./models/angler_fish.glb");
   return (
     <group rotation-y={2.6} ref={fish} {...props} dispose={null}>
+      <mesh geometry={nodes["Node-Mesh"].geometry} material={materials.mat2} />
       <mesh
-        geometry={nodes['Node-Mesh'].geometry}
-        material={materials.mat2}
-      />
-      <mesh
-        geometry={nodes['Node-Mesh_1'].geometry}
+        geometry={nodes["Node-Mesh_1"].geometry}
         material={materials.mat1}
       />
       <mesh
-        geometry={nodes['Node-Mesh_2'].geometry}
+        geometry={nodes["Node-Mesh_2"].geometry}
         material={materials.mat23}
       />
       <mesh
-        geometry={nodes['Node-Mesh_3'].geometry}
+        geometry={nodes["Node-Mesh_3"].geometry}
         material={materials.mat21}
       />
       <mesh
-        geometry={nodes['Node-Mesh_4'].geometry}
+        geometry={nodes["Node-Mesh_4"].geometry}
         material={materials.mat12}
-      >
-      </mesh>
+      ></mesh>
     </group>
-  )
+  );
 }
 
-useGLTF.preload('./models/angler_fish.glb')
+useGLTF.preload("./models/angler_fish.glb");
