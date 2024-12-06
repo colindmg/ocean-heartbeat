@@ -1,4 +1,4 @@
-import { Canvas } from "@react-three/fiber";
+import {Canvas} from "@react-three/fiber";
 import Experiment from "./components/Experience";
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     <>
       <Canvas
         shadows
-        
+
         style={{
           width: "100vw",
           height: "100vh",
@@ -16,7 +16,7 @@ function App() {
           zIndex: -1,
         }}
       >
-        <Experiment />
+        <Experiment/>
       </Canvas>
     </>
   );

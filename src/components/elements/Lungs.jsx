@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { Outlines, useGLTF } from '@react-three/drei'
+import {useState} from 'react'
+import {Outlines, useGLTF} from '@react-three/drei'
 
 export function Lungs(props) {
-  const { nodes, materials } = useGLTF('./models/lungs.glb')
+  const {nodes, materials} = useGLTF('./models/lungs.glb')
   const [hovered, setHovered] = useState(false)
 
   return (
@@ -21,7 +21,7 @@ export function Lungs(props) {
           setHovered(false)
         }}
       >
-        {hovered && <Outlines thickness={10} color="white" />}
+        {hovered && <Outlines thickness={10} color="white"/>}
       </mesh>
     </group>
   )

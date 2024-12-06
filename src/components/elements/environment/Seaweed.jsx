@@ -1,29 +1,29 @@
-import { useGLTF } from '@react-three/drei'
+import {useGLTF} from '@react-three/drei'
 
 export function Seaweed(props) {
-    const { nodes, materials } = useGLTF('./models/environment/seaweed.glb')
-    return (
-        <group {...props} dispose={null}>
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes['Node-Mesh'].geometry}
-                material={materials.mat9}
-            />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes['Node-Mesh_1'].geometry}
-                material={materials.mat11}
-            />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes['Node-Mesh_2'].geometry}
-                material={materials.mat10}
-            />
-        </group>
-    )
+  const {nodes, materials} = useGLTF('./models/environment/seaweed.glb')
+  return (
+    <group scale={2} position-y={0.7} {...props} dispose={null}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes['Node-Mesh'].geometry}
+        material={materials.mat9}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes['Node-Mesh_1'].geometry}
+        material={materials.mat11}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes['Node-Mesh_2'].geometry}
+        material={materials.mat10}
+      />
+    </group>
+  )
 }
 
 useGLTF.preload('./models/environment/seaweed.glb')

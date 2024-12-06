@@ -1,7 +1,7 @@
-import { useGLTF } from '@react-three/drei'
+import {useGLTF} from '@react-three/drei'
 
 export function AnglerFish(props) {
-  const { nodes, materials } = useGLTF('./models/angler_fish.glb')
+  const {nodes, materials} = useGLTF('./models/angler_fish.glb')
   return (
     <group {...props} dispose={null}>
       <mesh
