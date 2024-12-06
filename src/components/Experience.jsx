@@ -7,10 +7,11 @@ import Caustics from "./Caustics";
 import {Sparkles} from "@react-three/drei";
 import useMouse from "../hooks/useMouse";
 import {lerp} from "../utils";
+import { Brain } from "./elements/Brain.jsx";
+import { Heart } from "./elements/Heart.jsx";
 import {AnglerFish} from "./elements/AnglerFish.jsx";
 
 const Experience = () => {
-
   const { camera } = useThree();
   camera.position.set(0, 4, 5);
   const mouse = useMouse();
@@ -24,7 +25,7 @@ const Experience = () => {
   return (
     <>
       {/* PERFS */}
-      <Perf position="top-left" />
+      <Perf position="top-left" style={{ display: "none" }} />
 
       {/* POSTPROCESSING */}
       <PostProcessing />
@@ -47,6 +48,8 @@ const Experience = () => {
       {/* SCENE */}
       <Sand />
       <AnglerFish position={[-2, 4, -8]} />
+      <Heart rotation-y={Math.PI * 0.5 * 3} position={[0, 1, 1]} scale={0.05} />
+      <Brain scale={0.014} position={[0, 1, 1]} />
       <OceanEnvironment position-z={2} />
       <Sparkles scale={30} size={2} count={200} />
     </>
